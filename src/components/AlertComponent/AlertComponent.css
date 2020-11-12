@@ -1,0 +1,33 @@
+.main-div{
+    position: absolute;
+    z-index: 2;
+    width:50vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    margin:auto;
+    left:0;
+    right: 0;
+    background-color: white;
+    height: auto;
+    padding-bottom: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);   
+    border-radius: 5px;
+}
+
+.content-Wrapper{
+    margin-top:"50px";
+}
+
+.cancelButton{
+    display: block;
+    background-color: rgb(241, 58, 58);
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    width: 70px;
+    border:none;
+    border-radius: 5px;
+    height: 30px;
+    margin-top: 20px;
+    margin:auto;
+    font-size: 15px;
+}

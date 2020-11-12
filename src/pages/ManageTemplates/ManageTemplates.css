@@ -1,0 +1,54 @@
+.h2-ManageQuotes{
+    text-align: center;
+    font-size: 25px;
+}
+
+.main-quote-div-list{
+    display: block;
+    background-color: #EFECEC;
+    width: 85vw;
+    margin:auto;
+    height: auto;
+    padding-bottom: 40px;
+}
+
+.change-pages-div{
+    display: flex;
+    flex-direction: row;
+    margin:auto;
+    justify-content: space-around;
+    background-color: #EFECEC;
+    max-width: 85vw;
+    height: 90px;
+
+}
+
+.button-change-page{
+    background-color:#4DA9FF;
+    color:white;
+    font-family: 'Rubik', sans-serif;
+    width: auto;
+    padding-left:20px;
+    padding-right: 20px;
+    border:none;
+    border-radius: 5px;
+    height: 40px;
+    margin-left: 10px;
+    margin-top: 25px;
+    font-size: 15px;
+}
+
+.reset-btn{
+    display: block;
+    background-color:#4DA9FF;
+    color:white;
+    font-family: 'Rubik', sans-serif;
+    width: auto;
+    padding-left:20px;
+    padding-right: 20px;
+    border:none;
+    border-radius: 5px;
+    height: 40px;
+    font-size: 15px;
+    margin:auto
+}

@@ -1,0 +1,258 @@
+@media screen and (min-width:769px){
+
+
+@keyframes expand {
+    from {
+        transform: scale(0);
+        opacity: 0;
+        background:#FFF
+    }
+}
+
+.info-box{
+    display: flex ;
+    flex-direction: column;
+    background-color: #EFECEC;
+    height: auto;
+    width: 50vw;
+    margin-left: 20px;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.text-header{
+    margin-top: 30px;
+    background-color: #EFECEC;
+    border:none;
+    padding:20px;
+    font-family: 'Rubik', sans-serif;
+    font-size:20px
+}
+
+.select-infoBox{
+    max-width: 40vw;
+    background-color: #EFECEC;
+    overflow-y: scroll;
+    max-height: 100px;
+    color:white;
+    border-radius: 5px;
+}
+
+.info-box-Card{
+    max-width: 40vw;
+    background-color: white;
+    max-height: 200px;
+    color:black;
+    border-radius: 5px;
+}
+.info-box-Card:hover{
+    max-width: 40vw;
+    background-color: dodgerblue;
+    max-height: 200px;
+    color:white;
+    border-radius: 5px;
+}
+
+.text-header::placeholder{
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    height: 50px;
+}
+.text-header:focus{
+    outline:none
+}
+
+.text-desc{
+    border:none;
+    border-width: 2px;
+    height: auto;
+    width:38vw;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    background-color:#EFECEC;
+    margin-top:20px;
+    margin-left:20px;
+    word-wrap: break-word;
+    resize: none;
+}
+
+.text-desc:focus{
+    outline:none
+}
+
+.info-area{
+    margin-top:30px;
+    display: flex;
+    flex-direction: row;
+    animation: expand 0.5s ease-in-out;
+}
+
+.done-button{
+    width:150px;
+    height: 40px;
+    margin-left: 20px;
+    background-color: #4DA9FF;
+    color:white;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+    border-radius: 5px;
+
+}
+.delete-button{
+    width:150px;
+    height: 40px;
+    margin-left: 20px;
+    background-color: #4DA9FF;
+    color:white;
+    border: none;
+    font-size:15px;
+    font-family: 'Rubik', sans-serif;
+    border-radius: 5px;
+    margin-top:20px
+}
+
+
+.check-icon{
+    margin-left:20px;
+}
+
+.action-buttons{
+    display:flex;
+    flex-direction: column;
+}
+
+.action-area{
+    display: flex;
+    flex-direction: row;
+}
+.add-image-btn{
+    font-family: 'Rubik', sans-serif;
+}
+
+.add-image-btn:focus{
+    outline: none;
+}
+}
+
+@media screen and (max-width:768px){
+
+
+
+@keyframes expand {
+    from {
+        transform: scale(0);
+        opacity: 0;
+        background:#FFF
+    }
+}
+
+.info-box{
+    display: flex ;
+    flex-direction: column;
+    background-color: #EFECEC;
+    height: auto;
+    width: 80vw;
+    margin-left: 20px;
+    border-radius: 5px;
+    padding:20px;
+}
+
+.text-header{
+    margin-top: 30px;
+    background-color: #EFECEC;
+    border:none;
+    padding:20px;
+    font-family: 'Rubik', sans-serif;
+    font-size:20px
+}
+
+.text-header::placeholder{
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    height: 50px;
+}
+.text-header:focus{
+    outline:none
+}
+
+.text-desc{
+    border:none;
+    border-width: 2px;
+    height: auto;
+    width:38vw;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    background-color:#EFECEC;
+    margin-top:20px;
+    margin-left:20px;
+    word-wrap: break-word;
+    resize: none;
+}
+
+.text-desc:focus{
+    outline:none
+}
+
+.info-area{
+    margin-top:30px;
+    display: flex;
+    flex-direction: column;
+    animation: expand 0.5s ease-in-out;
+}
+
+.done-button{
+    width:150px;
+    height: 40px;
+    margin-left: 20px;
+    background-color: #4DA9FF;
+    color:white;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+    border-radius: 5px;
+
+}
+.delete-button{
+    width:150px;
+    height: 40px;
+    margin-left: 20px;
+    background-color: #4DA9FF;
+    color:white;
+    border: none;
+    font-size:15px;
+    font-family: 'Rubik', sans-serif;
+    border-radius: 5px;
+}
+
+
+.check-icon{
+    margin-top: 30px;
+    margin-left:20px;
+}
+
+.action-buttons{
+    margin-top: 20px;
+    display:flex;
+    flex-direction: row;
+}
+
+.action-area{
+    display: flex;
+    flex-direction: row;
+}
+
+.add-image-btn{
+    width:70vw;
+    height: 40px;
+    background-color: #4DA9FF;
+    color:white;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+    border-radius: 5px;
+    font-size: 18px;
+    margin:auto
+}
+
+.add-image-btn:focus{
+    outline: none;
+}
+}

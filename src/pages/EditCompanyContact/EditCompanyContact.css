@@ -1,0 +1,30 @@
+.first-h1{
+    text-align: center;
+}
+
+.contacts-select-div{
+    background-color: #4DA9FF;
+    width: 90vw;
+    border-radius: 5px;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.create-contact-selector{
+    background-color: white;
+    margin-top: 40px;
+    color: black;
+    height: 50px;
+    width: auto;
+    padding: 10px;
+    font-family: 'Rubik', sans-serif;
+    border:none;
+    border-radius: 5px;
+    font-size: 15px;
+}

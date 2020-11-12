@@ -1,0 +1,35 @@
+.quote-box{
+    display: block;
+    margin: auto;
+    background-color: #4DA9FF;
+    width: 80vw;
+    height: 150px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.quote-list-div{
+    padding-top: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.quote-box p{
+    font-size: 25px;
+    color: white;
+}
+
+.edit-quotebox{
+    background-color: white;
+    color: black;
+    font-family: 'Rubik', sans-serif;
+    width: 130px;
+    border:none;
+    border-radius: 5px;
+    height: 30px;
+    margin-left: 10px;
+    margin-top: 25px;
+    font-size: 15px;
+}

@@ -1,0 +1,38 @@
+.delete-popup-div{
+background-color: white;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);   
+height: 200px;
+width: 50vw;
+margin:auto;
+border-radius: 5px;
+margin-top: 100px;
+position: absolute;
+left:0;
+right: 0;
+z-index: 3;
+}
+
+.delete-popup-div p {
+    padding-top: 15px;
+    text-align: center;
+}
+
+.yes-delete-popup{
+    background-color: rgb(226, 70, 70);
+    color:white;
+    width:100px;
+    height: 40px;
+    border:none;
+    border-radius: 5px;
+    font-family: 'Rubik', sans-serif;
+}
+.no-delete-popup{
+    background-color: rgb(14, 170, 14);
+    color:white;
+    width:100px;
+    height: 40px;
+    border:none;
+    border-radius: 5px;
+    font-family: 'Rubik', sans-serif;
+}
+

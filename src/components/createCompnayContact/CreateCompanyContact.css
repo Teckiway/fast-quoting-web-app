@@ -1,0 +1,40 @@
+.main-create-companyContact{
+    margin:auto;
+    width: 90vw;
+    background-color:  #EFECEC;
+    height: 500px;
+    padding: 20px;
+    overflow: scroll;
+}
+
+.input-field-create-company{
+    width: 63.5vw;
+    height: 30px;
+    border:none;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 10px;
+    font-family: 'Rubik', sans-serif;
+    margin-left: 35px;
+}
+
+.input-field-create-company::placeholder{
+    font-family: 'Rubik', sans-serif;
+    font-size: 15px;
+}
+
+.create-contact-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.input-field-create-company-short{
+    width: 30vw;
+    height: 30px;
+    border:none;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 10px;
+    font-family: 'Rubik', sans-serif;
+    margin-left: 35px;
+}

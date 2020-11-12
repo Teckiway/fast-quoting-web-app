@@ -1,0 +1,13 @@
+.h2-ManageQuotes{
+    text-align: center;
+    font-size: 30px;
+}
+
+.main-quote-div-list{
+    display: block;
+    background-color: #EFECEC;
+    width: 85vw;
+    margin:auto;
+    height: auto;
+    padding-bottom: 40px;
+}

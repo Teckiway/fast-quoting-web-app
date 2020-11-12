@@ -1,0 +1,11 @@
+.create-product-h3{
+    text-align: center;
+    font-size: 30px;
+}
+
+.navigation-inner{
+    background-color: #EFECEC;
+    max-width: 100vw;
+    height: 70px;
+    border-bottom: 10px white;
+}

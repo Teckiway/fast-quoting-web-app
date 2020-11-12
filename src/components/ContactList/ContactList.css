@@ -1,0 +1,36 @@
+.contact-box{
+    display: block;
+    margin: auto;
+    background-color: #4DA9FF;
+    width: 80vw;
+    height: 100px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    padding:5px;
+}
+
+.contact-box-div{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+
+.contact-box p{
+    font-size: 20px;
+    color: white;
+}
+
+.edit-contact-box{
+    background-color: white;
+    color: black;
+    font-family: 'Rubik', sans-serif;
+    width: 70px;
+    border:none;
+    border-radius: 5px;
+    height: 30px;
+    margin-right: 10px;
+    margin-top: 20px;
+    font-size: 15px;
+}

@@ -1,0 +1,40 @@
+.main-div-signup{
+    margin-top: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.signup-Image{
+    width: 50vw;
+}
+
+.sign-up-h3{
+    font-size: 28px;
+    text-align: center;
+}
+
+.input-signup{
+    width: 40vw;
+    border-radius: 5px;
+    height: 40px;
+    border-color:transparent;
+    background-color:white ;
+    font-family: 'Rubik', sans-serif;
+    border-width: 1px;
+    font-size: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);   
+}
+
+.signupButton{
+    width:auto;
+    height: 40px;
+    margin-top: 10px;
+    background-color: #4DA9FF;
+    color:white;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}

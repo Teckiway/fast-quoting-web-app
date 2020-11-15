@@ -19,6 +19,7 @@ const Header = ()=> {
     const contactPage = `/${userId}/manage-contact`
     const dashboard = `/${userId}/dashboard`
     const templates = `/${userId}/manage-templates`
+    const quotes = `/${userId}/manage-quotes`
 
     return (
         <div className='header-div'>
@@ -30,7 +31,7 @@ const Header = ()=> {
                   <Link style={{textDecoration:'none'}} to={contactPage} >
                   <li className='linka'>Contact</li>
                   </Link>
-                  <Link style={{textDecoration:'none'}} to={contactPage} >
+                  <Link style={{textDecoration:'none'}} to={quotes} >
                   <li className='linka'>Quotes</li>
                   </Link>
                   <Link style={{textDecoration:'none'}} to={templates} >

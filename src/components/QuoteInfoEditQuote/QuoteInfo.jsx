@@ -9,7 +9,7 @@ import SpinnerComponent from '../smallspinner/spinnerComponent';
 import ImageUploader from 'react-images-upload';
 import {firestore, storage} from '../../firebase'
 
-const QuoteInfo = ({handleInfoAddition, indexNumber , handleInfoBoxDelete, listOfInfoBox})=> {
+const QuoteInfo = ({handleInfoAddition, indexNumber , handleInfoBoxDelete, listOfInfoBox, infoBoxObject})=> {
 
     const location   = useLocation()
 
@@ -26,15 +26,20 @@ const QuoteInfo = ({handleInfoAddition, indexNumber , handleInfoBoxDelete, listO
     const [IncludingInfoBox, setIncludingInfoBox] =  useState([])
 
 
-    const id = uuid4()
 
     useEffect(()=>{
-        setQuoteInfoId(id)
-
         let locationPath =  location.pathname
         let splittedPath = locationPath.split('/')
         let mainId = splittedPath[1]
         setGlobalKey(mainId)
+
+        const {description, imageNotToBeDeleted, title, images, id } = infoBoxObject
+
+        setQuoteInfoId(id)
+        setTitleDescription(description)
+        setImagesNotToBeDeleted(imageNotToBeDeleted)
+        setTitleText(title)
+        setImageArray(images)
     },[])
 
     const handleTitleText = (value)=>{
@@ -250,9 +255,8 @@ const QuoteInfo = ({handleInfoAddition, indexNumber , handleInfoBoxDelete, listO
         <div className='action-area'>
         <div className='action-buttons'>
         <button onClick={()=>handleButtonClick()} className='done-button'>Done</button>
-        <button onClick={()=>handleInfoBoxTrash()} className='deleteinfo-quote-button'>Delete</button>
+        <button onClick={()=>handleInfoBoxTrash()} className='delete-button'>Delete</button>
         </div>
-        
         {
                doneButtonClicked ?     <AiFillCheckCircle size={30} color= 'green'  className='check-icon'/> : ''
         }

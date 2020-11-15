@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import './QuoteEditor.css';
 import ServicePriceBoxEditor from '../../components/ServicePriceEditor/ServicePriceBoxEditor'
+import ServicePriceBoxEditorEdiQuote from '../../components/ServicePriceEditor-EditQuote/ServicePriceBoxEditor'
 import QuoteInfo from '../../components/QuoteInfo/QuoteInfo';
 import {useHistory, useLocation} from 'react-router-dom'
 import { firestore } from '../../firebase';
 import {v4 as uuid} from 'uuid';
 import CreateContact from '../../components/CreatePersonContact-forQuote/createPersonContact';
 import AlertComponent from '../../components/AlertComponent/AlertComponent';
-import SmallSpinnerComponent from '../../components/smallspinner/spinnerComponent'
+import SmallSpinnerComponent from '../../components/smallspinner/spinnerComponent';
+import QuoteInfoEditQuotes from '../../components/QuoteInfoEditQuote/QuoteInfo'
 
 const QuoteEditor = ()=> {
 
@@ -42,6 +44,8 @@ const QuoteEditor = ()=> {
     const [dueDate, setDueDate]  = useState('')
     const [saveButtonClicked, setSavedButtonClicked] =  useState(false)
     const [quoteTitle, setQuoteTitle] = useState('')
+    const [addItemActive, setAddItemActive] =  useState(false)
+    const [addInfoBoxActive, setAddInfoBoxActive]  = useState(false)
 
 
 
@@ -65,8 +69,9 @@ const QuoteEditor = ()=> {
         let locationPath =  location.pathname
         let splittedPath = locationPath.split('/')
         let mainId = splittedPath[1]
+        let quoteId = splittedPath[splittedPath.length - 1]
         setGlobalKey(mainId)
-        setQuoteId(id)
+        setQuoteId(quoteId)
         setDueDate(fullDate)
 
         setNumberOfInfoBox([...numberOfInfoBox, id])
@@ -105,6 +110,24 @@ const QuoteEditor = ()=> {
             }
         })
 
+        firestore.collection("Quotes").doc(quoteId).get()
+        .then(querySnapShot=>{
+            let data = querySnapShot.data()
+
+            let {itemObject,infoBoxObject, targetContact, subTotal, taxTotal, totalSum, taxState, dueDate, globalKey, quoteTitle, lastEdited} = data
+
+            setItemObject(itemObject)
+            setInfoBoxObjects(infoBoxObject)
+            setFinalContactObject(targetContact)
+            setSubTotal(Number(subTotal))
+            setTaxTotal(Number(taxTotal))
+            setTotalSum(Number(totalSum))
+            setTaxState(taxState)
+            setDueDate(dueDate)
+            setFinalDisplayName(`${targetContact.firstName} ${targetContact.lastName}`)
+            setQuoteTitle(quoteTitle)
+        })
+
     },[])
 
     
@@ -114,6 +137,7 @@ const QuoteEditor = ()=> {
     }
 
     const handlePriceEditor = (value)=>{
+        setAddItemActive(false)
         console.log(value)
         console.log(itemObject.length)
         let newObject = itemObject
@@ -186,7 +210,7 @@ const QuoteEditor = ()=> {
     }
 
     const handleNumberofItems  = ()=>{
-        setNumberofItems([...numberOfItems, id])
+        setAddItemActive(true)
     }
     
    const handleSingleProjectDelete  = (value, key)=>{
@@ -223,14 +247,10 @@ const QuoteEditor = ()=> {
                   return number !== key
               })
               console.log(newNumberOfItemsArray)
-
-              if(numberOfItems.length === 1){
-                  setNumberofItems([])
-                  setTimeout(()=>{
-                      setNumberofItems([...numberOfItems,id])
-                  },1000)
+              if(numberOfItems.length === 0){
+                  setNumberofItems([...numberOfItems, id])
               } else{
-                  setNumberofItems(newNumberOfItemsArray)
+                  console.log('hi')
               }
 
              } else{
@@ -251,16 +271,15 @@ const QuoteEditor = ()=> {
             if(newListOfItems.length === 0){
                 let newNumberOfItem = newListOfItems
                 console.log(numberOfItems)
+                newNumberOfItem.push(1)
                 setNumberofItems(newNumberOfItem)
                 console.log(newNumberOfItem)
-                setTimeout(()=>{
-                    setNumberofItems([...numberOfItems, id])
-                },1000)
             }
        }
    }
 
    const handleSetInfoBoxes = (object)=>{
+       setAddInfoBoxActive(false)
        if(infoBoxObjects.length === 0){
            setInfoBoxObjects([...infoBoxObjects,object ])
        }
@@ -289,7 +308,7 @@ const QuoteEditor = ()=> {
    }
 
    const handleNumberoFInfoBox = ()=>{
-    setNumberOfInfoBox([...numberOfInfoBox, id ])
+    setAddInfoBoxActive(true)
    }
 
     const handleDueDate = (value)=>{
@@ -317,14 +336,7 @@ const QuoteEditor = ()=> {
           })
 
 
-          if(numberOfInfoBox.length === 1 ){
-              setNumberOfInfoBox([])
-              setTimeout(()=>{
-                  setNumberOfInfoBox([...numberOfInfoBox, id])
-              },1000)
-          } else{
-            setNumberOfInfoBox(newNumberOfInfoBoxs)
-          }
+           setNumberOfInfoBox(newNumberOfInfoBoxs)
             
         }
         else{
@@ -347,11 +359,6 @@ const QuoteEditor = ()=> {
              console.log(newNumberOfInfoBoxs)
 
              setNumberOfInfoBox(newNumberOfInfoBoxs) 
-        } else{
-            setNumberOfInfoBox([])
-              setTimeout(()=>{
-                  setNumberOfInfoBox([...numberOfInfoBox, id])
-              },1000)
         }
         
     }
@@ -512,7 +519,7 @@ const handleQuoteTitle= (value)=>{
                 <h4>Settings (Quote Settings)</h4>
                 <div>
                 <p>Payment Due</p>
-                <input type="text" name=""  className='paymentDue-box' placeholder='13th November 2020 8:45 PM ' />
+                <input type="text" name=""  className='paymentDue-box' placeholder='13th November 2020 8:45 PM' value={dueDate} />
                 </div>
                 {
                    moreSettingsClicked ? <div className='more-settings-div'>
@@ -529,7 +536,7 @@ const handleQuoteTitle= (value)=>{
                        <div>
                        <p>Total Sum (Tax Factors)</p>
                        <select onChange= {(event)=>handleTaxStateChange(event.target.value)}  name="" id="" className='options-select'>
-                           <option defaultValue value="Tax Exclusive (Inclusive Total)">Tax Exclusive (Inclusive Total)</option>
+                           <option defaultValue value={taxState}>Tax Exclusive (Inclusive Total)</option>
                            <option value="Tax Inlcuded">Tax Included</option>
                            <option value="Tax Excluded">Tax Excluded</option>
                            <option value="No Tax">No Tax</option>
@@ -546,7 +553,7 @@ const handleQuoteTitle= (value)=>{
             </div>
             
             <div className="title-name-section"><br/><br/>
-            <input type="text" className= 'title-name-box' placeholder='Title of Quote'  onChange={(event)=>handleQuoteTitle=(event.target.value)} />    
+            <input type="text" className= 'title-name-box' placeholder='Title of Quote' value={quoteTitle}  onChange={(event)=>handleQuoteTitle(event.target.value)} />    
             </div>
 
 
@@ -571,13 +578,17 @@ const handleQuoteTitle= (value)=>{
 
 <div className='items-list-div' onDragOver={(event)=>console.log(event)} > 
 {
-    numberOfItems.map((item, i)=>{
-        return <ServicePriceBoxEditor listOfProducts={listOfProducts}   key={item}  numberAssigned ={item} addObject = {handlePriceEditor}  taxationState = {taxState}  handleSingleProjectDelete ={handleSingleProjectDelete} />
+    itemObject.map((item, i)=>{
+        
+        return <ServicePriceBoxEditorEdiQuote listOfProducts={listOfProducts} key={i} itemProduct={item} addObject = {handlePriceEditor}  taxationState = {taxState}  handleSingleProjectDelete ={handleSingleProjectDelete} />
     })
 }
+
+{
+    addItemActive ? <ServicePriceBoxEditor  listOfProducts={listOfProducts}  numberAssigned ='50' addObject = {handlePriceEditor}  taxationState = {taxState}  handleSingleProjectDelete ={handleSingleProjectDelete}  /> : ""
+}
 </div>
-            {/* <ServicePriceBoxEditor addObject = {handlePriceEditor}  taxationState = {taxState}  /> */}
-            {/* <ServicePriceBoxEditor addObject = {handlePriceEditor} taxationState = {taxState} /> */}
+            
  
             <div className="section-total-and-add" >
                 <button className='add-items-text' onClick={()=>handleNumberofItems()}> + Add Item </button>
@@ -620,9 +631,13 @@ const handleQuoteTitle= (value)=>{
                 
             </div>
             {
-                numberOfInfoBox.map((number, i)=>{
-                    return <QuoteInfo listOfInfoBox={listOfInfoBox} handleInfoAddition = {handleSetInfoBoxes} key={number} indexNumber = {number} handleInfoBoxDelete={handleInfoBoxDelete} />
+                infoBoxObjects.map((infoBox, i)=>{
+                    return <QuoteInfoEditQuotes listOfInfoBox={listOfInfoBox} handleInfoAddition = {handleSetInfoBoxes} key={i}  handleInfoBoxDelete={handleInfoBoxDelete} infoBoxObject={infoBox} />
                 })
+            }
+
+            {
+                addInfoBoxActive ? <QuoteInfo listOfInfoBox={listOfInfoBox} handleInfoAddition = {handleSetInfoBoxes}  indexNumber = {50} handleInfoBoxDelete={handleInfoBoxDelete} /> : ""
             }
          <button className='add-items-text' onClick={()=>handleNumberoFInfoBox()}> + Add Items </button>
 <br/><br/><br/>

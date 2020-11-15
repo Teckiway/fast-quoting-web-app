@@ -242,7 +242,6 @@ const  ManageTemplates = ()=> {
             <h2 className='h2-ManageQuotes'>Manage Templates , Products & Info Boxes</h2><br/>
             <div className='change-pages-div'>
             <button className='button-change-page' onClick={()=>handleViewController('products')} >Products</button>
-                <button className='button-change-page'>Template</button>
                 <button className='button-change-page' onClick={()=>handleViewController('infoBoxTemplates')}>Info Boxes </button>
                 </div><br/><br/>
             <br/>

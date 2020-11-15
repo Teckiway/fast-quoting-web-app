@@ -6,17 +6,14 @@ import {MdCancel} from 'react-icons/md';
 import ImageUploader from 'react-images-upload';
 import {useLocation} from 'react-router-dom';
 import {firestore,storage} from '../../firebase';
-import SmallSpinnner from '../../components/smallspinner/spinnerComponent'
-import ImagePreview from '../../components/ImagePreviewComponent/ImagePreview'
+import SmallSpinnner from '../smallspinner/spinnerComponent'
+import ImagePreview from '../ImagePreviewComponent/ImagePreview'
 
-const ServicePriceBoxEditor = ({addObject, taxationState, numberAssigned , handleSingleProjectDelete, listOfProducts })=> {
+const ServicePriceBoxEditor = ({addObject, taxationState , handleSingleProjectDelete, listOfProducts, itemProduct })=> {
 
     const location =  useLocation()
 
-    const id = uuidv4()
-
-    const key  =  numberAssigned
-
+    const key = itemProduct.id
 
     const [productName, setProductName] = useState('')
     const [productDescription, setProductDescription] = useState('')
@@ -49,11 +46,24 @@ const ServicePriceBoxEditor = ({addObject, taxationState, numberAssigned , handl
 
 
     useEffect(()=>{
-        setProductId(id)
         let locationPath =  location.pathname
         let splittedPath = locationPath.split('/')
         let mainId = splittedPath[1]
         setGlobalKey(mainId)
+
+        const {id, imagesNotToBeDeleted, itemQuantity, productDescription, productImages, productName, tax,totalPrice, totaltaxPriceSum, unitPrice, taxSelection} = itemProduct
+        
+
+        setProductId(id)
+        setImagesNotToBeDeleted(imagesNotToBeDeleted)
+        setItemQuantity(itemQuantity)
+        setProductDescription(productDescription)
+        setImages(productImages)
+        setProductName(productName)
+        setTax(tax)
+        setTotalPrice(totalPrice)
+        setUnitPrice(unitPrice)
+        setTaxSelection(taxSelection)
 
     },[])
 
@@ -112,7 +122,7 @@ const ServicePriceBoxEditor = ({addObject, taxationState, numberAssigned , handl
         "totaltaxPriceSum" : totalPrice + taxationFee,
         "productImages" : images,
         "imagesNotToBeDeleted": imagesNotToBeDeleted,
-        "taxSelection" : taxSelection
+        "taxSelection":taxSelection
     }
 
 
@@ -172,11 +182,9 @@ const ServicePriceBoxEditor = ({addObject, taxationState, numberAssigned , handl
                 console.log(imageIncluded)
             })
             handleSingleProjectDelete(productId, key)
-            console.log(id, key)
 
         } else{
             handleSingleProjectDelete(productId, key)
-            console.log(id, key)
         }
 
     }

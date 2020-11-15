@@ -14,7 +14,8 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import CreateProduct from './pages/CreateProducts/CreateProducts';
 import EditPriceEditor from './pages/EditProducts/EditProducts';
 import CreateInfoBox from './pages/Create Info Box/CreateInfoBox';
-import EditInfoBox from './pages/EdiInfo Box/EditQuoteInfo'
+import EditInfoBox from './pages/EdiInfo Box/EditQuoteInfo';
+import EditQuotes from './pages/EditQuotes/QuoteEditor'
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
 
       </Route> */}
       <Route path='/:id/new-quote' component={QuoteEditor}/>
-      <Route path='/manage-quotes' component={ManageQuotes} />
+      <Route path='/:id/manage-quotes' component={ManageQuotes} />
       <Route path='/:id/manage-contact' component = {ManageContacts} />
       <Route path='/:id/edit-contact/:id' component = {EditContact} />
       <Route path='/:id/manage-templates' component = {ManageTemplates} />
@@ -39,6 +40,7 @@ function App() {
       <Route path='/:id/edit-product/:id' component ={EditPriceEditor} />
       <Route path='/:id/create-info-box' component={CreateInfoBox} />
       <Route path='/:id/edit-info-box/:id' component={EditInfoBox} />
+      <Route path='/:id/edit-quote/:id' component={EditQuotes} />  
     </div>
     </Fragment>
     </Switch>

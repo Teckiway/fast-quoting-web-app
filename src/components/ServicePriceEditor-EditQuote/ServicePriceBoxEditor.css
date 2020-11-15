@@ -1,0 +1,375 @@
+ @media screen and (min-width:769px){
+    @keyframes expand {
+        from {
+            transform: scale(0);
+            opacity: 0;
+            background:#FFF
+        }
+    }
+    
+    .service-box{
+        animation: expand 0.5s ease-in-out
+    }
+    
+    .priceEditorDiv-flex{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .productNameEditor{
+        height: auto;
+        width: 40vw;
+        margin-left:30px;
+        margin-top:30px;
+        padding: 20px;
+        background-color:#EFECEC;
+        border-radius: 5px;
+        padding-bottom: 50px;
+        border-color: rgba(0, 0, 0, 0.22);
+    }
+    
+    .product-name-box{
+        border-top:none;
+        border-left:none;
+        border-right:none;
+        border-bottom:none;
+        height: 50px;
+        width:30vw;
+        font-family: 'Rubik', sans-serif;
+        font-size: 20px;
+        background-color:#EFECEC;
+        margin-top:20px;
+    }
+    
+    .product-name-box:focus{
+        outline:none;
+        font-family: 'Rubik', sans-serif;
+        font-size: 20px;
+        margin-top:20px
+    }
+    
+    .product-name-box::placeholder{
+        font-family: 'Rubik', sans-serif;
+        font-size: 20px;
+        margin-top:20px
+    }
+    .product-desc-box{
+        border:none;
+        border-width: 2px;
+        height: auto;
+        width:38vw;
+        font-family: 'Rubik', sans-serif;
+        font-size: 20px;
+        background-color:#EFECEC;
+        margin-top:20px;
+        word-wrap: break-word;
+        resize: none;
+    }
+    
+    .product-desc-box:focus{
+        outline:none;
+        font-family: 'Rubik', sans-serif;
+        font-size: 20px;
+        margin-top:20px
+    }
+    
+    .product-desc-box::placeholder{
+        font-family: 'Rubik', sans-serif;
+        font-size: 20px;
+        margin-top:20px
+    }
+    
+    .productPricingEditor{
+        display: flex;
+        flex-direction: column;
+        margin-left:30px;
+        margin-top: 30px;
+    }
+    
+    .productPricing-row-flex{
+        display: flex;
+        flex-direction: row;
+    }
+    .productUnits-row-flex{
+        display: flex;
+        flex-direction: row;
+    }
+    .options-select{
+        width: 300px;
+        height: 40px;
+        background-color: #EFECEC;
+        border-radius: 5px;
+        margin-left:10px;
+        font-family: 'Rubik', sans-serif;
+        font-size:15px;
+        border-color: rgba(0, 0, 0, 0.22);
+    }
+    
+    .input-price{
+        width:150px;
+        height: 30px;
+        margin-top: 20px;
+        background-color: #EFECEC;
+        border-radius: 5px;
+        border-color: rgba(0, 0, 0, 0.22);
+        border-width: 1px;  
+        font-family: 'Rubik', sans-serif;
+        margin-left:10px;
+    }
+    
+    .product-form-label-div{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .product-form-label-div p{
+        text-align:right
+    }
+    
+    .total-sum-section-div{
+        list-style: none;
+        margin-right:30px;
+    }
+    
+    .done-button{
+        width:100px;
+        height: 40px;
+        background-color: #4DA9FF;
+        color:white;
+        border: none;
+        font-family: 'Rubik', sans-serif;
+        border-radius: 5px;
+    
+    }
+    .delete-button{
+        width:100px;
+        height: 40px;
+        background-color:red;
+        color:white;
+        border: none;
+        font-family: 'Rubik', sans-serif;
+        border-radius: 5px;
+        margin-top:10px;
+        margin-left: 50vw;
+        font-size: 18px;
+    }
+    
+    .button-check-div{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .add-image-btn{
+        width:38vw;
+        height: 40px;
+        background-color: #4DA9FF;
+        color:white;
+        border: none;
+        font-family: 'Rubik', sans-serif;
+        border-radius: 5px;
+        font-size: 18px;
+    }
+
+    .select-products{
+        max-width: 40vw;
+        background-color: #EFECEC;
+        overflow-y: scroll;
+        max-height: 100px;
+        color:white;
+        border-radius: 5px;
+    }
+
+    .product-select-card{
+        max-width: 40vw;
+        background-color: white;
+        max-height: 200px;
+        color:black;
+        border-radius: 5px;
+    }
+
+    .product-select-card:hover{
+        max-width: 40vw;
+        background-color: #4DA9FF;
+        max-height: 200px;
+        color:white;
+        border-radius: 5px;
+    }
+    
+ }
+
+@media screen and (max-width:768px){
+    @keyframes expand {
+        from {
+            transform: scale(0);
+            opacity: 0;
+            background:#FFF
+        }
+    }
+    
+    .service-box{
+        animation: expand 0.5s ease-in-out
+    }
+    
+    .priceEditorDiv-flex{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .productNameEditor{
+        height: auto;
+        width: 80vw;
+        margin:auto;
+        margin-top:30px;
+        background-color:#EFECEC;
+        border-radius: 5px;
+        padding: 30px;
+        border-color: rgba(0, 0, 0, 0.22);
+    }
+    
+    .product-name-box{
+        border-top:none;
+        border-left:none;
+        border-right:none;
+        border-bottom:none;
+        height: 50px;
+        width:70vw;
+        font-family: 'Rubik', sans-serif;
+        font-size: 20px;
+        background-color:#EFECEC;
+        margin-top:20px;
+    }
+    
+    .product-name-box:focus{
+        outline:none;
+        font-family: 'Rubik', sans-serif;
+        font-size: 20px;
+        margin-top:20px
+    }
+    
+    .product-name-box::placeholder{
+        font-family: 'Rubik', sans-serif;
+        font-size: 20px;
+        margin-top:20px
+    }
+    .product-desc-box{
+        border:none;
+        border-width: 2px;
+        height: auto;
+        width:70vw;
+        font-family: 'Rubik', sans-serif;
+        font-size: 20px;
+        background-color:#EFECEC;
+        margin-top:20px;
+        word-wrap: break-word;
+        resize: none;
+    }
+    
+    .product-desc-box:focus{
+        outline:none;
+        font-family: 'Rubik', sans-serif;
+        font-size: 20px;
+        margin-top:20px
+    }
+    
+    .product-desc-box::placeholder{
+        font-family: 'Rubik', sans-serif;
+        font-size: 20px;
+        margin-top:20px
+    }
+    
+    .productPricingEditor{
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+    }
+    
+    .productPricing-row-flex{
+        display: flex;
+        flex-wrap: wrap;
+        
+        padding: 10px;
+    }
+    .productUnits-row-flex{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .options-select{
+        width: 300px;
+        height: 40px;
+        background-color: #EFECEC;
+        border-radius: 5px;
+        margin-left:10px;
+        font-family: 'Rubik', sans-serif;
+        margin-top: 20px;
+        font-size:15px;
+        border-color: rgba(0, 0, 0, 0.22);
+    }
+    
+    .input-price{
+        width:150px;
+        height: 30px;
+        margin-top: 20px;
+        background-color: #EFECEC;
+        border-radius: 5px;
+        border-color: rgba(0, 0, 0, 0.22);
+        border-width: 1px;  
+        font-family: 'Rubik', sans-serif;
+        margin-left:10px;
+    }
+    
+    .product-form-label-div{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .product-form-label-div p{
+        text-align:right
+    }
+    
+    .total-sum-section-div{
+        list-style: none;
+        margin-right:30px;
+    }
+    
+    .done-button{
+        width:100px;
+        height: 40px;
+        margin-top: 10px;
+        background-color: #4DA9FF;
+        color:white;
+        border: none;
+        font-family: 'Rubik', sans-serif;
+        border-radius: 5px;
+    
+    }
+    .delete-button{
+        width:100px;
+        height: 40px;
+        background-color:red;
+        color:white;
+        border: none;
+        font-family: 'Rubik', sans-serif;
+        border-radius: 5px;
+        margin-top:10px;
+        margin-left: 50vw;
+        font-size: 18px;
+    }
+    
+    .button-check-div{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    
+    .add-image-btn{
+        width:70vw;
+        height: 40px;
+        background-color: #4DA9FF;
+        color:white;
+        border: none;
+        font-family: 'Rubik', sans-serif;
+        border-radius: 5px;
+        font-size: 18px;
+    }
+}
+

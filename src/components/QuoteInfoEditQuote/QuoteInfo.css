@@ -104,7 +104,7 @@
 }
 
 .done-button{
-    max-width:150px;
+    width:150px;
     height: 40px;
     margin-left: 20px;
     background-color: #4DA9FF;
@@ -114,8 +114,8 @@
     border-radius: 5px;
 
 }
-.deleteinfo-quote-button{
-    max-width:150px;
+.delete-button{
+    width:150px;
     height: 40px;
     margin-left: 20px;
     background-color: #4DA9FF;
@@ -227,7 +227,7 @@
     border-radius: 5px;
 
 }
-.deleteinfo-quote-button{
+.delete-button{
     width:150px;
     height: 40px;
     margin-left: 20px;
